@@ -7,7 +7,7 @@
  */
 
 return [
-    'appId' => env('WECHAT_APPID',''),
-    'secret' => env('WECHAT_SECRET',''),
+    'appId' => env('WECHAT_APPID','wx0d14fa3b426807cd'),
+    'secret' => env('WECHAT_SECRET','c53e9a4daabcf0e111537648a8fe3768'),
     'aes_key' => env('WECHAT_AESKEY',''),
 ];

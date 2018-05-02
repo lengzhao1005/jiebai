@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 
 class AuthUserInfoController extends Controller
 {
-    protected $authType='Weixin';
+    protected $authType='Alipay';
 
     public function __construct()
     {
-        if(isAliOrWx()==='Alipay') $this->authType = 'Alipay';
+        if(isAliOrWx()==='Weixin') $this->authType = 'Weixin';
     }
 
     /*
@@ -44,6 +44,9 @@ class AuthUserInfoController extends Controller
         }else{
             $user_info = app('EasyWechatOfficial')->oauth->user()->getOriginal();
         }
+
+dump($this->authType);
+dd($user_info);
 
         $authRepository->saveOrUpdateAuthUserInfo($user_info,$this->authType);
         session(['web_user'=>$user_info]);

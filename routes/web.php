@@ -19,4 +19,4 @@ Route::get('/', function () {
 Route::get('wx-or-ali-auth','Auth\AuthUserInfoController@getUserInfo')->name('WAauth');
 Route::get('auth-callback','Auth\AuthUserInfoController@authCallback');
 //会员中心
-Route::get('user-center','UserCenterController@index')->name('ucenter');
+Route::get('user-center','UserCenterController@index')->name('ucenter')->middleware('wxorali');
