@@ -28,7 +28,18 @@ class AlipayAuth extends AopClient
     /**
      * @var string
      */
+    protected $openauthUrl = 'https://openauth.alipay.com/oauth2/publicAppAuthorize.htm';
+
+    /**
+     * @var string
+     */
     protected $cachePrefix = 'aliauth.access_token.';
+
+    public function redirect($scope='auth_userinfo',$state='jiebai_auth_ali')
+    {
+        $url = $this->openauthUrl.'?appid='.config('alipay.appId').'&scope='.$scope.'&redirect_uri='.urlencode(config('alipay.callbackUrl')).'&state='.$state;
+        return redirect($url);
+    }
 
     public function getAccessToken(bool $refresh = false)
     {
@@ -59,7 +70,6 @@ class AlipayAuth extends AopClient
         }
 
         return $result->alipay_user_userinfo_share_response;
-
     }
 
     public function requestToken():array

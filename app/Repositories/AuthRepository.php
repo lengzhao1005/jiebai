@@ -11,5 +11,8 @@ namespace App\Repositories;
 
 class AuthRepository
 {
+    public function saveOrUpdateAuthUserInfo(array $user_info,string $auth_type)
+    {
 
+    }
 }

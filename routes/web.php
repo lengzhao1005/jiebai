@@ -15,3 +15,8 @@ Route::get('/', function () {
 
     return view('welcome');
 });
+//微信或支付宝授权
+Route::get('wx-or-ali-auth','Auth\AuthUserInfoController@getUserInfo')->name('WAauth');
+Route::get('auth-callback','Auth\AuthUserInfoController@authCallback');
+//会员中心
+Route::get('user-center','UserCenterController@index')->name('ucenter');
