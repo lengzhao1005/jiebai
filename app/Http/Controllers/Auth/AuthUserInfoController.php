@@ -46,13 +46,13 @@ class AuthUserInfoController extends Controller
             $user_info = app('EasyWechatOfficial')->oauth->user()->getOriginal();
         }
         dump($this->authType);
-dd($user_info);
+
         //将授权信息转化为待插入数据
         $insertdata = $this->UserInfoToInsertData($user_info);
-
+dump($insertdata);
         //更新或插入数据，
         $user = $authRepository->saveOrUpdateAuthUserInfo($insertdata,$this->authType);
-
+dd($user);
         //存入session
         session(['web_user'=>$user]);
 
@@ -81,6 +81,7 @@ dd($user_info);
             case 'Alipay';
                 $insertdata['user_status'] = $user_info->user_status;
                 $insertdata['is_mobile_auth'] = $user_info->is_mobile_auth;
+                $insertdata['nickname'] = $user_info->nick_name;
                 $insertdata['gender'] = $user_info->gender;
                 $insertdata['province'] = $user_info->province;
                 $insertdata['city'] = $user_info->city;
