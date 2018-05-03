@@ -9,4 +9,6 @@ class Wxuser extends Model
     public $table='wxuser';
 
     public $timestamps = false;
+
+    protected $guarded = [];
 }
