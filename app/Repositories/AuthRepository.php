@@ -42,8 +42,6 @@ class AuthRepository
             $user = $db_user->create($user_info);
         }
 
-        $user->auth_type = $auth_type;
-
         return $user;
     }
 }

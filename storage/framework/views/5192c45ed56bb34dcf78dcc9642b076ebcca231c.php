@@ -1,8 +1,6 @@
-@extends('layouts._main')
+<?php $__env->startSection('title','个人中心'); ?>
 
-@section('title','个人中心')
-
-@section('css')
+<?php $__env->startSection('css'); ?>
     <style type="text/css">
         body{background-color: #ddd}
         /*抖动*/
@@ -23,7 +21,7 @@
             -ms-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
         }
-        @keyframes shake_box{
+        @keyframes  shake_box{
             0% {transform: translate(0px, 0px) rotate(0deg)}
             20% {transform: translate(1.5px, -2.5px) rotate(-1.5deg)}
             40% {transform: translate(-2.5px, 0.5px) rotate(-0.5deg)}
@@ -181,23 +179,19 @@
             line-height: 21px;
         }
     </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('container')
+<?php $__env->startSection('container'); ?>
 <div class="app">
     <div class="center-card">
         <div class="process">
-            {{--进度条--}}
+            
             <div class="line">
                 <div class="ng"></div>
 
                 <div class="rank-div">
-                    {{--记分牌--}}
-                    {{--`<div class="rank am-u-sm-3">
-                        <div class="rank-radius rank1">aa</div>
-                        <p>普通会员</p>
-                        <p class="rank-p">无成长值</p>
-                    </div>--}}
+                    
+                    
                     <div class="rank am-u-sm-4">
                         <div class="rank-radius rank2">bb</div>
                         <p>银卡会员</p>
@@ -220,7 +214,7 @@
         <p>距离下一等级还需777成长值</p>
         <button id="clock">打卡</button>
     </div>
-    {{--tap--}}
+    
     <div class="center-tap">
         <div class="center-tap1">
             积分 <span>852</span>
@@ -234,11 +228,11 @@
             I礼平卡区
         </div>
     </div>
-    {{--二维码--}}
+    
     <div class="center-qrcode">
 
     </div>
-    {{--权益--}}
+    
     <div class="center-prower">
         <h3>会员特权</h3>
         <div class="am-u-sm-3">分享有礼</div>
@@ -263,9 +257,9 @@
         <button class="bottom-button">兑换</button>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('js')
+<?php $__env->startSection('js'); ?>
     <script>
         $('.box').click(function () {
             $(this).addClass('shake');
@@ -276,4 +270,5 @@
         $(".ng").animate({ width:'44%'},1000);
 
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts._main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
