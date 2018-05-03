@@ -37,7 +37,8 @@ class AlipayAuth extends AopClient
 
     public function redirect($scope='auth_userinfo',$state='jiebai_auth_ali')
     {
-        $url = $this->openauthUrl.'?appid='.config('alipay.appId').'&scope='.$scope.'&redirect_uri='.urlencode(config('alipay.callbackUrl')).'&state='.$state;
+        $url = $this->openauthUrl.'?app_id='.config('alipay.appId').'&scope='.$scope.'&redirect_uri='.urlencode(config('alipay.callbackUrl')).'&state='.$state;
+
         return redirect($url);
     }
 
