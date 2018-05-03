@@ -10,6 +10,8 @@
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
+    {{--csrf-token--}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
@@ -40,7 +42,15 @@
 </div>
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('lib/amazeui/js/amazeui.min.js') }}"></script>
+<script type="text/javascript">
+    let token = document.head.querySelector('meta[name="csrf-token"]');
 
+    if (token) {
+        window.laravel_csrf_token = token.content;
+    } else {
+        console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    }
+</script>
 
 @yield('js')
 
