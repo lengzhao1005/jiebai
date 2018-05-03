@@ -10,4 +10,9 @@ class UserCenterController extends Controller
     {
         return view('user.center');
     }
+
+    public function bindPhone()
+    {
+        return view('user.bind_phone');
+    }
 }

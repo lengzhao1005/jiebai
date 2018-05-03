@@ -1577,6 +1577,49 @@
         ]
     },
     {
+        "name": "overtrue/easy-sms",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/overtrue/easy-sms.git",
+            "reference": "a6f9921246e7f58c39f296af27627815f9539c29"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/overtrue/easy-sms/zipball/a6f9921246e7f58c39f296af27627815f9539c29",
+            "reference": "a6f9921246e7f58c39f296af27627815f9539c29",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "^6.2",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "mockery/mockery": "1.0.x-dev",
+            "phpunit/phpunit": "^6.5"
+        },
+        "time": "2018-04-13T14:09:53+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Overtrue\\EasySms\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "overtrue",
+                "email": "i@overtrue.me"
+            }
+        ],
+        "description": "The easiest way to send short message."
+    },
+    {
         "name": "overtrue/socialite",
         "version": "2.0.3",
         "version_normalized": "2.0.3.0",

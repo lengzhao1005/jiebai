@@ -26,8 +26,8 @@ class EasyWechatProvider extends ServiceProvider
     {
         $this->app->singleton('EasyWechatOfficial', function(){
             return Factory::officialAccount([
-                'app_id' => config('weixin.appId'),//wx0d14fa3b426807cd
-                'secret' => config('weixin.secret'),//c53e9a4daabcf0e111537648a8fe3768
+                'app_id' => config('weixin.appId'),//wxd554e6eef059216c
+                'secret' => config('weixin.secret'),//5113592c045e613d21384dd23228c139
 
                 'oauth' => [
                     'scopes'   => ['snsapi_userinfo'],
