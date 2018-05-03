@@ -17,6 +17,7 @@ class CreateAliuserTable extends Migration
             $table->increments('id');
             $table->integer('id_wxuser')->unique()->comment('主表id_user');
             $table->string('user_status','5');
+            $table->string('nickname','100');
             $table->string('is_mobile_auth','5');
             $table->string('gender','5');
             $table->string('province','80');
@@ -28,8 +29,8 @@ class CreateAliuserTable extends Migration
             $table->string('user_type_value','5');
             $table->string('is_bank_auth','5');
             $table->string('is_id_auth','5');
-            $table->string('ali_user_id','200');
-            $table->string('alipay_user_id','5');
+            $table->string('ali_user_id','50');
+            $table->string('alipay_user_id','50');
             $table->timestamps();
         });
     }
