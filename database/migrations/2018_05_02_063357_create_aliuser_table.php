@@ -23,7 +23,7 @@ class CreateAliuserTable extends Migration
             $table->string('province','80');
             $table->string('city','100');
             $table->string('is_licence_auth','5');
-            $table->string('avatar','200');
+            $table->string('avatar_url','200');
             $table->string('is_certify_grade_a','5');
             $table->string('is_student_certified','5');
             $table->string('user_type_value','5');
