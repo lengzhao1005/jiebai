@@ -30,7 +30,7 @@ class AuthRepository
             $db_user_info = Wxuser::where('wx_openid',$user_info['wx_openid'])->first();
             $db_user = new Wxuser();
         }
-dump($db_user_info);
+
         if(!empty($db_user_info)) {
 
             $user = $db_user_info->update($user_info);
@@ -41,7 +41,7 @@ dump($db_user_info);
 
             $user = $db_user->create($user_info);
         }
-        dd($user);
+
         $user->auth_type = $auth_type;
 
         return $user;

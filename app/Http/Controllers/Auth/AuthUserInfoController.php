@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Handlers\AliAuth\AlipayAuth;
 use App\Http\Controllers\Controller;
 use App\Repositories\AuthRepository;
-use Illuminate\Http\Request;
 
 class AuthUserInfoController extends Controller
 {
@@ -45,14 +44,13 @@ class AuthUserInfoController extends Controller
         }else{
             $user_info = app('EasyWechatOfficial')->oauth->user()->getOriginal();
         }
-        dump($this->authType);
 
         //将授权信息转化为待插入数据
         $insertdata = $this->UserInfoToInsertData($user_info);
-dump($insertdata);
+
         //更新或插入数据，
         $user = $authRepository->saveOrUpdateAuthUserInfo($insertdata,$this->authType);
-dd($user);
+
         //存入session
         session(['web_user'=>$user]);
 
