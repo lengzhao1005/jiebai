@@ -45,7 +45,8 @@ class AuthUserInfoController extends Controller
         }else{
             $user_info = app('EasyWechatOfficial')->oauth->user()->getOriginal();
         }
-
+        dump($this->authType);
+dd($user_info);
         //将授权信息转化为待插入数据
         $insertdata = $this->UserInfoToInsertData($user_info);
 

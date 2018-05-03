@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('wx-or-ali-auth','Auth\AuthUserInfoController@getUserInfo')->name('WAauth');
 Route::get('auth-callback','Auth\AuthUserInfoController@authCallback');
 //会员中心 ->middleware('wxorali')
-Route::get('user-center','UserCenterController@index')->name('ucenter');
+Route::get('user-center','UserCenterController@index')->name('ucenter')->middleware('wxorali');
 
 //绑定手机号
 Route::get('bind-phone','UserCenterController@bindPhone')->name('bindPhone');
