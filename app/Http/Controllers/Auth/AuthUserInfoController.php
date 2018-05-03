@@ -90,7 +90,7 @@ class AuthUserInfoController extends Controller
                 $insertdata['user_type_value'] = $user_info->user_type_value;
                 $insertdata['is_bank_auth'] = $user_info->is_bank_auth;
                 $insertdata['is_id_auth'] = $user_info->is_id_auth;
-                $insertdata['ali_user_id'] = $user_info->ali_user_id;
+                $insertdata['ali_user_id'] = $user_info->user_id;
                 $insertdata['alipay_user_id'] = $user_info->alipay_user_id;
             break;
         }
