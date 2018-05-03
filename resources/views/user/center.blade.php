@@ -50,7 +50,7 @@
             overflow-x: scroll;
             /*color:#EFEFEF;*/
             font-weight: lighter;
-            padding: 5% 0 17% 0;
+            padding: 5% 0 19% 0;
         }
         .process::-webkit-scrollbar {
             display:none
@@ -94,7 +94,7 @@
             margin-top: 5px;
         }
         .center-card>p{
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
         #clock{
             font-size: 10px;
@@ -271,9 +271,9 @@
             $(this).addClass('shake');
         });
 
-        var set = $('.rank1').offset().left-$(window).width()/2;
-        $(".process").animate({ scrollLeft: ($('.rank2').offset().left-$(window).width()/2+25) }, 1000);
-        $(".ng").animate({ width:'44%'},1000);
+        var set = $('.rank2').offset().left-$(window).width()/2;
+        $(".process").animate({ scrollLeft: ($('.rank3').offset().left-$(window).width()/2+25) }, 1000);
+        $(".ng").animate({ width:'55%'},1000);
 
     </script>
 @endsection
